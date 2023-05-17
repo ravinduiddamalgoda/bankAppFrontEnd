@@ -1,5 +1,5 @@
 import { makeStyles } from "@material-ui/core";
-import { Box, Button, FormControl, TextField, Typography } from "@mui/material";
+import { Box, Button, Container, FormControl, TextField, Typography } from "@mui/material";
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../component/AuthProvider";
@@ -405,7 +405,7 @@ export function MainPage(){
     return(
         <>
         
-        <Box className = {classes.boxStyle}>
+        <Container className = {classes.boxStyle}>
           <Box className = {classes.mainCol}> 
               <img src = {img} className = {classes.iconImg}/>
               <Typography className = {classes.typoMain} > {name} {lastname}</Typography>
@@ -429,7 +429,7 @@ export function MainPage(){
           <AddAmountCard  email = {email}/>
           <InterBankTrans acc = {accNo} />
           <Typography className = {classes.typoEnd} >YourBank.com</Typography>
-        </Box>
+        </Container>
         
         </>
     );

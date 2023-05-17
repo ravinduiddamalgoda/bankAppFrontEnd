@@ -5,6 +5,8 @@ import { RegisterUser } from './screens/RegisterUser'
 
 import { AuthGuard, GuestGuard } from './component/AuthGuard'
 import { MainPage } from './screens/MainPage'
+// import { TestScr } from './screens/TestScreen'
+import Payment from './screens/Payment'
 
 
 
@@ -13,6 +15,7 @@ function ProtectedRoutes() {
       <AuthGuard>
         <Routes>
           <Route path = "" element = {<MainPage />} />
+          <Route path = "/payment" element = {<Payment/>} />
         </Routes>
       </AuthGuard>
   );

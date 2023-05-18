@@ -4,7 +4,7 @@ import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../component/AuthProvider";
 import img from "../assets/userIcon.png"
-import { Navigate} from "react-router-dom";
+import { Navigate, useNavigate} from "react-router-dom";
 import { useSnackbar } from 'notistack';
 import { Formik } from "formik";
 
@@ -351,6 +351,7 @@ export function MainPage(){
     const [accNo, setAccNo] = useState();
     const [email , setEmail] = useState();
     const { enqueueSnackbar } = useSnackbar();
+    const navigate = useNavigate();
 
     useEffect(() => {
         const currentUser = async () => {
@@ -412,6 +413,7 @@ export function MainPage(){
               <Button className = {classes.btnLogout} onClick={() => {
                 localStorage.clear();
                 // Navigate('/login');
+                navigate('/login');
                 location.reload();
               }}> LOGOUT </Button>
 
